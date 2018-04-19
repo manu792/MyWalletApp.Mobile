@@ -40,7 +40,6 @@ namespace MyWalletApp.Mobile
 
         private void FuentesBtn_Click(object sender, System.EventArgs e)
         {
-            throw new System.NotImplementedException();
         }
 
         private void ServiciosBtn_Click(object sender, System.EventArgs e)
@@ -50,12 +49,10 @@ namespace MyWalletApp.Mobile
 
         private void GastosBtn_Click(object sender, System.EventArgs e)
         {
-            throw new System.NotImplementedException();
         }
 
         private void IngresosBtn_Click(object sender, System.EventArgs e)
         {
-            throw new System.NotImplementedException();
         }
     }
 }

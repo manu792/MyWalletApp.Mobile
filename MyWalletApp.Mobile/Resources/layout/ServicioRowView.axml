@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dip">
+        <TextView
+            android:id="@+id/nombre"
+            android:layout_width="200dp"
+            android:textSize="16dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:gravity="left" />
+        <TextView
+            android:id="@+id/monto"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textSize="12dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/nombre" />
+        <TextView
+            android:id="@+id/fechaPago"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textSize="16dp"
+            android:gravity="right" />
+    </RelativeLayout>
+</LinearLayout>

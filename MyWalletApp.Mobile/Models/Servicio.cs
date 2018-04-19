@@ -14,9 +14,10 @@ namespace MyWalletApp.Mobile.Models
 {
     public class Servicio : IEntities
     {
+        public int Id { get; set; }
         public string Nombre { get; set; }
         public double Monto { get; set; }
         public bool? EsPorMes { get; set; }
-        public DateTime FechaPago { get; set; }
+        public DateTime? FechaPago { get; set; }
     }
 }

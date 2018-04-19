@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using MyWalletApp.Mobile.Models;
 using MyWalletApp.Mobile.Services;
+using MyWalletApp.Mobile.Helpers;
 
 namespace MyWalletApp.Mobile.Fragments
 {
@@ -51,11 +52,7 @@ namespace MyWalletApp.Mobile.Fragments
 
         private void LoadTipoPagos()
         {
-            var array = new List<string>()
-            {
-                "Mensualmente",
-                "Anualmente"
-            };
+            var array = TipoPago.TiposPago;
 
             var adapter = new ArrayAdapter<string>(this.Activity, Android.Resource.Layout.SimpleSpinnerItem, array);
             _tipoPago.Adapter = adapter;
@@ -84,17 +81,27 @@ namespace MyWalletApp.Mobile.Fragments
             tipoPago = ((ArrayAdapter<string>)spinner.Adapter).GetItem(e.Position);
         }
 
-        private void _btnGuardar_Click(object sender, EventArgs e)
+        private async void _btnGuardar_Click(object sender, EventArgs e)
         {
-            var servicio = new Servicio()
+            if (!CamposInvalidos())
             {
-                Nombre = _nombre.Text,
-                Monto = Convert.ToDouble(_monto.Text),
-                EsPorMes = _tipoPago.SelectedItem.ToString().ToLower().Equals("mensualmente") ? true : false,
-                FechaPago = Convert.ToDateTime(_fechaPago.Text)
-            };
+                var servicio = new Servicio()
+                {
+                    Nombre = _nombre.Text,
+                    Monto = Convert.ToDouble(_monto.Text),
+                    EsPorMes = _tipoPago.SelectedItem.ToString().ToLower().Equals("mensualmente") ? true : false,
+                    FechaPago = Convert.ToDateTime(_fechaPago.Text)
+                };
 
-            servicioService.AgregarServicio(servicio);
+                await servicioService.AgregarServicio(servicio);
+            }
+        }
+
+        private bool CamposInvalidos()
+        {
+            return _nombre.Text.Equals(string.Empty) || 
+                   _monto.Text.Equals(string.Empty) || 
+                   _fechaPago.Text.Equals(string.Empty);
         }
 
         private void _btnFechaPago_Click(object sender, EventArgs e)

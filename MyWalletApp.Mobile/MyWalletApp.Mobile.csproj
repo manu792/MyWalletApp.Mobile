@@ -62,11 +62,12 @@
     <Reference Include="Mono.Android" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapters\ServicioListAdapter.cs" />
     <Compile Include="Data\Repositories\BaseRepository.cs" />
-    <Compile Include="Data\Repositories\ServicioRepository.cs" />
     <Compile Include="Fragments\DatePickerFragment.cs" />
     <Compile Include="Fragments\Servicios\ServiciosAgregarFragment.cs" />
     <Compile Include="Fragments\Servicios\ServiciosBuscarFragment.cs" />
+    <Compile Include="Helpers\TipoPago.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Models\IEntities.cs" />
     <Compile Include="Models\Servicio.cs" />
@@ -88,6 +89,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\ServiciosBuscarFragment.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ServicioRowView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
