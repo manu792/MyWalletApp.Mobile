@@ -66,10 +66,16 @@
     <Compile Include="Adapters\ServicioListAdapter.cs" />
     <Compile Include="Data\Repositories\BaseRepository.cs" />
     <Compile Include="Fragments\DatePickerFragment.cs" />
+    <Compile Include="Fragments\Fuentes\FuentesAgregarFragment.cs" />
+    <Compile Include="Fragments\Fuentes\FuentesBuscarFragment.cs" />
+    <Compile Include="Fragments\Gastos\GastosAgregarFragment.cs" />
+    <Compile Include="Fragments\Gastos\GastosBuscarFragment.cs" />
     <Compile Include="Fragments\Ingresos\IngresoAgregarFragment.cs" />
     <Compile Include="Fragments\Ingresos\IngresoBuscarFragment.cs" />
     <Compile Include="Fragments\Servicios\ServiciosAgregarFragment.cs" />
     <Compile Include="Fragments\Servicios\ServiciosBuscarFragment.cs" />
+    <Compile Include="FuentesActivity.cs" />
+    <Compile Include="GastosActivity.cs" />
     <Compile Include="Helpers\TipoPago.cs" />
     <Compile Include="IngresosActivity.cs" />
     <Compile Include="MainActivity.cs" />
