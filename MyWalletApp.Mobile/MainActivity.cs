@@ -53,6 +53,7 @@ namespace MyWalletApp.Mobile
 
         private void IngresosBtn_Click(object sender, System.EventArgs e)
         {
+            StartActivity(typeof(IngresosActivity));
         }
     }
 }

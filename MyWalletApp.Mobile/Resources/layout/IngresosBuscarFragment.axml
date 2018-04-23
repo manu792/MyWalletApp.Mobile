@@ -17,23 +17,13 @@
             android:minHeight="25px"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
-            android:id="@+id/serviciosListView" />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/labelNombre"
-            android:text="Nombre:"
-            android:layout_marginTop="30dp" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txtNombre"
-            android:hint="Nombre..." />
+            android:id="@+id/ingresosListView" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/labelMonto"
-            android:text="Monto:" />
+            android:text="Monto:"
+            android:layout_marginTop="30dp" />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -43,22 +33,33 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/labelTipoPago"
-            android:text="Tipo de Pago:" />
+            android:id="@+id/labelDescripcion"
+            android:text="Descripcion:"
+            android:inputType="text" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtDescripcion"
+            android:hint="Descripcion..." />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelFuente"
+            android:text="Fuente:" />
         <Spinner
             android:padding="5dp"
             android:layout_width="match_parent"
             android:layout_height="37.5dp"
-            android:id="@+id/tipoPagoDropDown" />
+            android:id="@+id/fuenteDropDown" />
         <Button
-            android:text="Fecha de Pago"
+            android:text="Fecha de Ingreso"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btnFechaPago" />
+            android:id="@+id/btnFechaIngreso" />
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txtFechaPago"
+            android:id="@+id/txtFechaIngreso"
             android:inputType="date" />
         <RelativeLayout
             android:orientation="vertical"
