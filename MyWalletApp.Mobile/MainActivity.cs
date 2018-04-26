@@ -1,6 +1,9 @@
 ﻿using Android.App;
 using Android.Widget;
 using Android.OS;
+using MyWalletApp.Mobile.Services;
+using System.Collections.Generic;
+using MyWalletApp.Mobile.Models;
 
 namespace MyWalletApp.Mobile
 {
@@ -11,6 +14,14 @@ namespace MyWalletApp.Mobile
         private Button gastosBtn;
         private Button serviciosBtn;
         private Button fuentesBtn;
+        private Button notificacionesBtn;
+        private ServicioService servicioService;
+        private IList<Servicio> notificaciones;
+
+        public MainActivity()
+        {
+            servicioService = new ServicioService();
+        }
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -22,12 +33,19 @@ namespace MyWalletApp.Mobile
             SetEventHandlers();
         }
 
+        protected override void OnStart()
+        {
+            base.OnStart();
+            LoadNotificaciones();
+        }
+
         private void Init()
         {
             ingresosBtn = FindViewById<Button>(Resource.Id.ingresosBtn);
             gastosBtn = FindViewById<Button>(Resource.Id.gastosBtn);
             serviciosBtn = FindViewById<Button>(Resource.Id.serviciosBtn);
             fuentesBtn = FindViewById<Button>(Resource.Id.fuentesBtn);
+            notificacionesBtn = FindViewById<Button>(Resource.Id.notificacionesBtn);
         }
 
         private void SetEventHandlers()
@@ -36,6 +54,24 @@ namespace MyWalletApp.Mobile
             gastosBtn.Click += GastosBtn_Click;
             serviciosBtn.Click += ServiciosBtn_Click;
             fuentesBtn.Click += FuentesBtn_Click;
+            notificacionesBtn.Click += NotificacionesBtn_Click;
+        }
+
+        private async void LoadNotificaciones()
+        {
+            var servicios = await servicioService.ServiciosAPagarEnProximosCincoDias();
+            notificaciones = (IList<Servicio>)servicios;
+            notificacionesBtn.Text = $"{notificaciones.Count} Notificacion(es)";
+        }
+
+        private void NotificacionesBtn_Click(object sender, System.EventArgs e)
+        {
+            if (notificaciones.Count > 0)
+            {
+                StartActivity(typeof(NotificacionActivity));
+            }
+            else
+                Toast.MakeText(this, "No hay notificaciones en este momento", ToastLength.Long).Show();
         }
 
         private void FuentesBtn_Click(object sender, System.EventArgs e)

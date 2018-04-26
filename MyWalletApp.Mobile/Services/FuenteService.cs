@@ -31,27 +31,27 @@ namespace MyWalletApp.Mobile.Services
             return ingresos;
         }
 
-        public async Task AgregarServicio(Fuente fuente)
+        public async Task AgregarFuente(Fuente fuente)
         {
             await ingresoRepo.Agregar(fuente, RESOURCE_NAME);
         }
 
-        public async Task ActualizarServicio(int id, Fuente fuente)
+        public async Task ActualizarFuente(int id, Fuente fuente)
         {
             await ingresoRepo.Update(id, fuente, RESOURCE_NAME);
         }
 
-        public async Task ActualizarServicio(string id, Fuente fuente)
+        public async Task ActualizarFuente(string id, Fuente fuente)
         {
             await ingresoRepo.Update(id, fuente, RESOURCE_NAME);
         }
 
-        public async Task EliminarServicio(int id)
+        public async Task EliminarFuente(int id)
         {
             await ingresoRepo.Delete(id, RESOURCE_NAME);
         }
 
-        public async Task EliminarServicio(string id)
+        public async Task EliminarFuente(string id)
         {
             await ingresoRepo.Delete(id, RESOURCE_NAME);
         }

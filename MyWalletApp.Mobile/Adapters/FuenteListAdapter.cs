@@ -13,12 +13,12 @@ using MyWalletApp.Mobile.Models;
 
 namespace MyWalletApp.Mobile.Adapters
 {
-    public class ServicioListAdapter : BaseAdapter<Servicio>
+    public class FuenteListAdapter : BaseAdapter<Fuente>
     {
-        IList<Servicio> items;
+        IList<Fuente> items;
         Activity context;
 
-        public ServicioListAdapter(Activity context, IList<Servicio> items) : base()
+        public FuenteListAdapter(Activity context, IList<Fuente> items) : base()
         {
             this.context = context;
             this.items = items;
@@ -43,18 +43,16 @@ namespace MyWalletApp.Mobile.Adapters
             return position;
         }
 
-        public override Servicio this[int position] => items[position];
+        public override Fuente this[int position] => items[position];
 
         public override View GetView(int position, View convertView, ViewGroup parent)
         {
             var item = items[position];
 
             if (convertView == null)
-                convertView = context.LayoutInflater.Inflate(Resource.Layout.ServicioRowView, null);
+                convertView = context.LayoutInflater.Inflate(Resource.Layout.FuenteRowView, null);
 
             convertView.FindViewById<TextView>(Resource.Id.nombre).Text = item.Nombre;
-            convertView.FindViewById<TextView>(Resource.Id.monto).Text = item.Monto.ToString();
-            convertView.FindViewById<TextView>(Resource.Id.fechaPago).Text = Convert.ToBoolean(item.EsPorMes) ? item.FechaPago.Value.Day + " de cada mes" : item.FechaPago.Value.Day + "/" + item.FechaPago.Value.Month + " de cada año";
 
             return convertView;
         }

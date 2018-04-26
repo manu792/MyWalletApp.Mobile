@@ -13,7 +13,7 @@ using MyWalletApp.Mobile.Fragments.Fuentes;
 
 namespace MyWalletApp.Mobile
 {
-    [Activity(Label = "FuentesActivity")]
+    [Activity(Label = "Fuentes")]
     public class FuentesActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -21,7 +21,7 @@ namespace MyWalletApp.Mobile
             base.OnCreate(savedInstanceState);
 
             // Create your application here
-            SetContentView(Resource.Layout.Servicios);
+            SetContentView(Resource.Layout.Fuentes);
 
             // Add tabs
             ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;

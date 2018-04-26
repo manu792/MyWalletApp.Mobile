@@ -55,5 +55,10 @@ namespace MyWalletApp.Mobile.Services
         {
             await servicioRepo.Delete(id, RESOURCE_NAME);
         }
+
+        public async Task<IEnumerable<Servicio>> ServiciosAPagarEnProximosCincoDias()
+        {
+            return await servicioRepo.GetAll("notificacion");
+        }
     }
 }

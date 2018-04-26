@@ -21,7 +21,7 @@ namespace MyWalletApp.Mobile
             base.OnCreate(savedInstanceState);
 
             // Create your application here
-            SetContentView(Resource.Layout.Servicios);
+            SetContentView(Resource.Layout.Ingresos);
 
             // Add tabs
             ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;

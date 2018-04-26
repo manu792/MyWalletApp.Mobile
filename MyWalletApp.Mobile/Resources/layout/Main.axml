@@ -25,4 +25,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/fuentesBtn" />
+    <Button
+        android:text="0 Notificacion(es)"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/notificacionesBtn" />
 </LinearLayout>
