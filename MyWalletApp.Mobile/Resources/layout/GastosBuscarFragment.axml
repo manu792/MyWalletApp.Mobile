@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/scrollView">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buscar"
+            android:hint="Buscar..." />
+        <ListView
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/gastosListView" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelMonto"
+            android:text="Monto:"
+            android:layout_marginTop="30dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtMonto"
+            android:hint="Monto..."
+            android:inputType="number" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelDescripcion"
+            android:text="Descripcion:" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtDescripcion"
+            android:hint="Descripcion..." />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelServicio"
+            android:text="Servicio:" />
+        <Spinner
+            android:padding="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="37.5dp"
+            android:id="@+id/servicioDropDown" />
+        <Button
+            android:text="Fecha de Ingreso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnFechaGasto" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txtFechaGasto"
+            android:inputType="date" />
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:text="Actualizar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnActualizar"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="94.5dp" />
+            <Button
+                android:text="Eliminar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnEliminar"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="208.0dp" />
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>

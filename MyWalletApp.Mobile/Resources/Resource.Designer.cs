@@ -51,10 +51,13 @@ namespace MyWalletApp.Mobile
 			public const int btnEliminar = 2130968585;
 			
 			// aapt resource value: 0x7f040014
-			public const int btnFechaIngreso = 2130968596;
+			public const int btnFechaGasto = 2130968596;
 			
-			// aapt resource value: 0x7f040021
-			public const int btnFechaPago = 2130968609;
+			// aapt resource value: 0x7f04001b
+			public const int btnFechaIngreso = 2130968603;
+			
+			// aapt resource value: 0x7f040028
+			public const int btnFechaPago = 2130968616;
 			
 			// aapt resource value: 0x7f040004
 			public const int btnGuardar = 2130968580;
@@ -66,40 +69,46 @@ namespace MyWalletApp.Mobile
 			public const int descripcion = 2130968586;
 			
 			// aapt resource value: 0x7f04000d
-			public const int fechaIngreso = 2130968589;
+			public const int fechaGasto = 2130968589;
 			
-			// aapt resource value: 0x7f04001e
-			public const int fechaPago = 2130968606;
+			// aapt resource value: 0x7f040018
+			public const int fechaIngreso = 2130968600;
+			
+			// aapt resource value: 0x7f040025
+			public const int fechaPago = 2130968613;
 			
 			// aapt resource value: 0x7f040001
 			public const int fragmentContainer = 2130968577;
 			
-			// aapt resource value: 0x7f04000c
-			public const int fuente = 2130968588;
-			
-			// aapt resource value: 0x7f040013
-			public const int fuenteDropDown = 2130968595;
+			// aapt resource value: 0x7f040017
+			public const int fuente = 2130968599;
 			
 			// aapt resource value: 0x7f04001a
-			public const int fuentesBtn = 2130968602;
+			public const int fuenteDropDown = 2130968602;
+			
+			// aapt resource value: 0x7f040021
+			public const int fuentesBtn = 2130968609;
 			
 			// aapt resource value: 0x7f040007
 			public const int fuentesListView = 2130968583;
 			
-			// aapt resource value: 0x7f040018
-			public const int gastosBtn = 2130968600;
-			
-			// aapt resource value: 0x7f040017
-			public const int ingresosBtn = 2130968599;
+			// aapt resource value: 0x7f04001f
+			public const int gastosBtn = 2130968607;
 			
 			// aapt resource value: 0x7f040016
-			public const int ingresosListView = 2130968598;
+			public const int gastosListView = 2130968598;
+			
+			// aapt resource value: 0x7f04001e
+			public const int ingresosBtn = 2130968606;
+			
+			// aapt resource value: 0x7f04001d
+			public const int ingresosListView = 2130968605;
 			
 			// aapt resource value: 0x7f040010
 			public const int labelDescripcion = 2130968592;
 			
-			// aapt resource value: 0x7f040012
-			public const int labelFuente = 2130968594;
+			// aapt resource value: 0x7f040019
+			public const int labelFuente = 2130968601;
 			
 			// aapt resource value: 0x7f04000e
 			public const int labelMonto = 2130968590;
@@ -107,11 +116,14 @@ namespace MyWalletApp.Mobile
 			// aapt resource value: 0x7f040002
 			public const int labelNombre = 2130968578;
 			
-			// aapt resource value: 0x7f04001f
-			public const int labelTipoPago = 2130968607;
+			// aapt resource value: 0x7f040012
+			public const int labelServicio = 2130968594;
 			
-			// aapt resource value: 0x7f04001c
-			public const int labelTitle = 2130968604;
+			// aapt resource value: 0x7f040026
+			public const int labelTipoPago = 2130968614;
+			
+			// aapt resource value: 0x7f040023
+			public const int labelTitle = 2130968611;
 			
 			// aapt resource value: 0x7f04000b
 			public const int monto = 2130968587;
@@ -119,32 +131,41 @@ namespace MyWalletApp.Mobile
 			// aapt resource value: 0x7f040000
 			public const int nombre = 2130968576;
 			
-			// aapt resource value: 0x7f04001b
-			public const int notificacionesBtn = 2130968603;
+			// aapt resource value: 0x7f040022
+			public const int notificacionesBtn = 2130968610;
 			
-			// aapt resource value: 0x7f04001d
-			public const int notificacionesListView = 2130968605;
+			// aapt resource value: 0x7f040024
+			public const int notificacionesListView = 2130968612;
 			
 			// aapt resource value: 0x7f040005
 			public const int scrollView = 2130968581;
 			
-			// aapt resource value: 0x7f040019
-			public const int serviciosBtn = 2130968601;
+			// aapt resource value: 0x7f04000c
+			public const int servicio = 2130968588;
 			
-			// aapt resource value: 0x7f040023
-			public const int serviciosListView = 2130968611;
+			// aapt resource value: 0x7f040013
+			public const int servicioDropDown = 2130968595;
 			
 			// aapt resource value: 0x7f040020
-			public const int tipoPagoDropDown = 2130968608;
+			public const int serviciosBtn = 2130968608;
+			
+			// aapt resource value: 0x7f04002a
+			public const int serviciosListView = 2130968618;
+			
+			// aapt resource value: 0x7f040027
+			public const int tipoPagoDropDown = 2130968615;
 			
 			// aapt resource value: 0x7f040011
 			public const int txtDescripcion = 2130968593;
 			
 			// aapt resource value: 0x7f040015
-			public const int txtFechaIngreso = 2130968597;
+			public const int txtFechaGasto = 2130968597;
 			
-			// aapt resource value: 0x7f040022
-			public const int txtFechaPago = 2130968610;
+			// aapt resource value: 0x7f04001c
+			public const int txtFechaIngreso = 2130968604;
+			
+			// aapt resource value: 0x7f040029
+			public const int txtFechaPago = 2130968617;
 			
 			// aapt resource value: 0x7f04000f
 			public const int txtMonto = 2130968591;
@@ -178,34 +199,46 @@ namespace MyWalletApp.Mobile
 			public const int FuentesBuscarFragment = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int IngresoRowView = 2130837508;
+			public const int GastoRowView = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int Ingresos = 2130837509;
+			public const int Gastos = 2130837509;
 			
 			// aapt resource value: 0x7f020006
-			public const int IngresosAgregarFragment = 2130837510;
+			public const int GastosAgregarFragment = 2130837510;
 			
 			// aapt resource value: 0x7f020007
-			public const int IngresosBuscarFragment = 2130837511;
+			public const int GastosBuscarFragment = 2130837511;
 			
 			// aapt resource value: 0x7f020008
-			public const int Main = 2130837512;
+			public const int IngresoRowView = 2130837512;
 			
 			// aapt resource value: 0x7f020009
-			public const int Notificaciones = 2130837513;
+			public const int Ingresos = 2130837513;
 			
 			// aapt resource value: 0x7f02000a
-			public const int ServicioRowView = 2130837514;
+			public const int IngresosAgregarFragment = 2130837514;
 			
 			// aapt resource value: 0x7f02000b
-			public const int Servicios = 2130837515;
+			public const int IngresosBuscarFragment = 2130837515;
 			
 			// aapt resource value: 0x7f02000c
-			public const int ServiciosAgregarFragment = 2130837516;
+			public const int Main = 2130837516;
 			
 			// aapt resource value: 0x7f02000d
-			public const int ServiciosBuscarFragment = 2130837517;
+			public const int Notificaciones = 2130837517;
+			
+			// aapt resource value: 0x7f02000e
+			public const int ServicioRowView = 2130837518;
+			
+			// aapt resource value: 0x7f02000f
+			public const int Servicios = 2130837519;
+			
+			// aapt resource value: 0x7f020010
+			public const int ServiciosAgregarFragment = 2130837520;
+			
+			// aapt resource value: 0x7f020011
+			public const int ServiciosBuscarFragment = 2130837521;
 			
 			static Layout()
 			{

@@ -33,6 +33,7 @@ namespace MyWalletApp.Mobile.Fragments.Ingresos
         private IEnumerable<Ingreso> _ingresos;
         private IList<Ingreso> _filteredList;
         private Ingreso _ingresoSeleccionado;
+        private IList<Fuente> _fuentes;
 
         public IngresoBuscarFragment()
         {
@@ -79,9 +80,9 @@ namespace MyWalletApp.Mobile.Fragments.Ingresos
 
         private async void LoadFuentes()
         {
-            var array = await _fuenteService.ObtenerFuentes();
+            _fuentes = (await _fuenteService.ObtenerFuentes()).ToList();
 
-            var adapter = new ArrayAdapter<Fuente>(this.Activity, Android.Resource.Layout.SimpleSpinnerItem, array.ToArray());
+            var adapter = new ArrayAdapter<Fuente>(this.Activity, Android.Resource.Layout.SimpleSpinnerItem, _fuentes.ToArray());
             _fuente.Adapter = adapter;
         }
 
@@ -127,8 +128,17 @@ namespace MyWalletApp.Mobile.Fragments.Ingresos
 
             _monto.Text = _ingresoSeleccionado.Monto.ToString();
             _descripcion.Text = _ingresoSeleccionado.Descripcion;
-            _fuente.SetSelection(1); // Fix this
+            _fuente.SetSelection(GetIndex());
             _fechaIngreso.Text = _ingresoSeleccionado.Fecha.ToString();
+        }
+
+        private int GetIndex()
+        {
+            for (int i = 0; i < _fuentes.Count; i++)
+                if (_fuentes[i].Id == _ingresoSeleccionado.Fuente.Id)
+                    return i;
+
+            return 0;
         }
 
         private async void _btnEliminar_Click(object sender, EventArgs e)

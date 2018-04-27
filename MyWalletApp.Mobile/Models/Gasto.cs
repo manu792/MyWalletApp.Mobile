@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace MyWalletApp.Mobile.Models
 {
-    public class Gasto
+    public class Gasto : IEntities
     {
         public int Id { get; set; }
         public double Monto { get; set; }

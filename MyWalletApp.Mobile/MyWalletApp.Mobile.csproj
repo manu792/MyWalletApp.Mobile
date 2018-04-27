@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapters\FuenteListAdapter.cs" />
+    <Compile Include="Adapters\GastoListAdapter.cs" />
     <Compile Include="Adapters\IngresoListAdapter.cs" />
     <Compile Include="Adapters\ServicioListAdapter.cs" />
     <Compile Include="Data\Repositories\BaseRepository.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\FuenteService.cs" />
+    <Compile Include="Services\GastoService.cs" />
     <Compile Include="Services\IngresoService.cs" />
     <Compile Include="Services\ServicioService.cs" />
     <Compile Include="ServiciosActivity.cs" />
@@ -136,6 +138,18 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Notificaciones.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\Gastos.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\GastosAgregarFragment.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\GastosBuscarFragment.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\GastoRowView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

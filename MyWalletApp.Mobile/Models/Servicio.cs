@@ -19,5 +19,10 @@ namespace MyWalletApp.Mobile.Models
         public double Monto { get; set; }
         public bool? EsPorMes { get; set; }
         public DateTime? FechaPago { get; set; }
+
+        public override string ToString()
+        {
+            return this.Nombre;
+        }
     }
 }
