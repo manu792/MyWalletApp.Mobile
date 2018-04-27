@@ -85,15 +85,27 @@ namespace MyWalletApp.Mobile.Fragments
         {
             if (!CamposInvalidos())
             {
-                var servicio = new Servicio()
+                try
                 {
-                    Nombre = _nombre.Text,
-                    Monto = Convert.ToDouble(_monto.Text),
-                    EsPorMes = _tipoPago.SelectedItem.ToString().ToLower().Equals("mensualmente") ? true : false,
-                    FechaPago = Convert.ToDateTime(_fechaPago.Text)
-                };
+                    var servicio = new Servicio()
+                    {
+                        Nombre = _nombre.Text,
+                        Monto = Convert.ToDouble(_monto.Text),
+                        EsPorMes = _tipoPago.SelectedItem.ToString().ToLower().Equals("mensualmente") ? true : false,
+                        FechaPago = Convert.ToDateTime(_fechaPago.Text)
+                    };
 
-                await servicioService.AgregarServicio(servicio);
+                    await servicioService.AgregarServicio(servicio);
+                    Toast.MakeText(this.Activity, "Servicio agregado correctamente", ToastLength.Long).Show();
+                }
+                catch
+                {
+                    Toast.MakeText(this.Activity, "Hubo un problema al tratar de agregar el servicio. Intente de nuevo mas tarde.", ToastLength.Long).Show();
+                }
+                finally
+                {
+                    LimpiarCampos();
+                }
             }
         }
 
@@ -111,6 +123,13 @@ namespace MyWalletApp.Mobile.Fragments
                 _fechaPago.Text = time.ToLongDateString();
             });
             frag.Show(FragmentManager, DatePickerFragment.TAG);
+        }
+
+        private void LimpiarCampos()
+        {
+            _nombre.Text = string.Empty;
+            _monto.Text = string.Empty;
+            _fechaPago.Text = string.Empty;
         }
     }
 }

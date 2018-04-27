@@ -110,6 +110,10 @@ namespace MyWalletApp.Mobile.Fragments.Ingresos
                 {
                     Toast.MakeText(this.Activity, ex.Message, ToastLength.Long).Show();
                 }
+                finally
+                {
+                    LimpiarCampos();
+                }
             }
         }
 
@@ -128,6 +132,14 @@ namespace MyWalletApp.Mobile.Fragments.Ingresos
                 _fechaIngreso.Text = time.ToLongDateString();
             });
             frag.Show(FragmentManager, DatePickerFragment.TAG);
+        }
+
+        private void LimpiarCampos()
+        {
+            _monto.Text = string.Empty;
+            _descripcion.Text = string.Empty;
+            fuente = null;
+            _fechaIngreso.Text = string.Empty;
         }
     }
 }

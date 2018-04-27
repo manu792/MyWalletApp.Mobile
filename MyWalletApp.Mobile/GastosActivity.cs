@@ -13,7 +13,7 @@ using MyWalletApp.Mobile.Fragments.Gastos;
 
 namespace MyWalletApp.Mobile
 {
-    [Activity(Label = "GastosActivity")]
+    [Activity(Label = "Gastos")]
     public class GastosActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

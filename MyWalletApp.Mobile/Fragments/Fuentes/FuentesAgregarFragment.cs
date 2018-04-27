@@ -78,12 +78,21 @@ namespace MyWalletApp.Mobile.Fragments.Fuentes
                 {
                     Toast.MakeText(this.Activity, ex.Message, ToastLength.Long).Show();
                 }
+                finally
+                {
+                    LimpiarCampos();
+                }
             }
         }
 
         private bool CamposInvalidos()
         {
             return _nombre.Text.Equals(string.Empty);
+        }
+
+        private void LimpiarCampos()
+        {
+            _nombre.Text = string.Empty;
         }
     }
 }

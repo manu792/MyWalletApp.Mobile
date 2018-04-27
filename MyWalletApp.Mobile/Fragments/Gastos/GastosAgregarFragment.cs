@@ -118,6 +118,10 @@ namespace MyWalletApp.Mobile.Fragments.Gastos
                 {
                     Toast.MakeText(this.Activity, ex.Message, ToastLength.Long).Show();
                 }
+                finally
+                {
+                    LimpiarCampos();
+                }
             }
         }
 
@@ -127,6 +131,14 @@ namespace MyWalletApp.Mobile.Fragments.Gastos
                    _descripcion.Text.Equals(string.Empty) ||
                    servicio == null ||
                    _fechaGasto.Text.Equals(string.Empty);
+        }
+
+        private void LimpiarCampos()
+        {
+            _monto.Text = string.Empty;
+            _descripcion.Text = string.Empty;
+            servicio = null;
+            _fechaGasto.Text = string.Empty;
         }
     }
 }
