@@ -33,6 +33,7 @@ namespace MyWalletApp.Mobile.Fragments.Ingresos
         private IEnumerable<Ingreso> _ingresos;
         private IList<Ingreso> _filteredList;
         private Ingreso _ingresoSeleccionado;
+        private ProgressBar _loadingSpinner;
         private IList<Fuente> _fuentes;
 
         public IngresoBuscarFragment()
@@ -68,14 +69,27 @@ namespace MyWalletApp.Mobile.Fragments.Ingresos
 
         private async void ActualizarIngresos()
         {
-            _ingresos = await _ingresoService.ObtenerIngresos();
-            _filteredList = _ingresos.ToList();
-            _ingresoSeleccionado = null;
-            _listView.Adapter = new IngresoListAdapter(this.Activity, _filteredList);
+            try
+            {
+                _loadingSpinner.Visibility = ViewStates.Visible;
 
-            ConfigurarAlturaListView();
+                _ingresos = await _ingresoService.ObtenerIngresos();
+                _filteredList = _ingresos.ToList();
+                _ingresoSeleccionado = null;
+                _listView.Adapter = new IngresoListAdapter(this.Activity, _filteredList);
 
-            LimpiarCampos();
+                ConfigurarAlturaListView();
+
+                LimpiarCampos();
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                _loadingSpinner.Visibility = ViewStates.Gone;
+            }
         }
 
         private async void LoadFuentes()
@@ -97,6 +111,7 @@ namespace MyWalletApp.Mobile.Fragments.Ingresos
             _fechaIngreso = View.FindViewById<TextView>(Resource.Id.txtFechaIngreso);
             _btnActualizar = View.FindViewById<Button>(Resource.Id.btnActualizar);
             _btnEliminar = View.FindViewById<Button>(Resource.Id.btnEliminar);
+            _loadingSpinner = View.FindViewById<ProgressBar>(Resource.Id.loadingSpinner);
         }
 
         private void HandleEvents()

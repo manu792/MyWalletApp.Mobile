@@ -21,6 +21,7 @@ namespace MyWalletApp.Mobile
         public MainActivity()
         {
             servicioService = new ServicioService();
+            notificaciones = new List<Servicio>();
         }
 
         protected override void OnCreate(Bundle savedInstanceState)

@@ -30,6 +30,7 @@ namespace MyWalletApp.Mobile.Fragments
         private EditText _monto;
         private Spinner _tipoPago;
         private TextView _fechaPago;
+        private ProgressBar _loadingSpinner;
         private ServicioService servicioService;
 
         public ServiciosBuscarFragment()
@@ -74,6 +75,7 @@ namespace MyWalletApp.Mobile.Fragments
             _monto = View.FindViewById<EditText>(Resource.Id.txtMonto);
             _tipoPago = View.FindViewById<Spinner>(Resource.Id.tipoPagoDropDown);
             _fechaPago = View.FindViewById<TextView>(Resource.Id.txtFechaPago);
+            _loadingSpinner = View.FindViewById<ProgressBar>(Resource.Id.loadingSpinner);
         }
 
         private void HandleEvents()
@@ -168,14 +170,27 @@ namespace MyWalletApp.Mobile.Fragments
 
         private async void ActualizarServicios()
         {
-            _servicios = await servicioService.ObtenerServicios();
-            _filteredList = _servicios.ToList();
-            _servicioSeleccionado = null;
-            _listView.Adapter = new ServicioListAdapter(this.Activity, _filteredList);
+            try
+            {
+                _loadingSpinner.Visibility = ViewStates.Visible;
 
-            ConfigurarAlturaListView();
+                _servicios = await servicioService.ObtenerServicios();
+                _filteredList = _servicios.ToList();
+                _servicioSeleccionado = null;
+                _listView.Adapter = new ServicioListAdapter(this.Activity, _filteredList);
 
-            LimpiarCampos();
+                ConfigurarAlturaListView();
+
+                LimpiarCampos();
+            }
+            catch
+            {
+                //
+            }
+            finally
+            {
+                _loadingSpinner.Visibility = ViewStates.Gone;
+            }
         }
 
         private void LimpiarCampos()

@@ -33,6 +33,7 @@ namespace MyWalletApp.Mobile.Fragments.Gastos
         private IEnumerable<Gasto> _gastos;
         private IList<Gasto> _filteredList;
         private Gasto _gastoSeleccionado;
+        private ProgressBar _loadingSpinner;
         private IList<Servicio> _servicios;
 
         public GastosBuscarFragment()
@@ -68,14 +69,27 @@ namespace MyWalletApp.Mobile.Fragments.Gastos
 
         private async void ActualizarGastos()
         {
-            _gastos = await _gastoService.ObtenerGastos();
-            _filteredList = _gastos.ToList();
-            _gastoSeleccionado = null;
-            _listView.Adapter = new GastoListAdapter(this.Activity, _filteredList);
+            try
+            {
+                _loadingSpinner.Visibility = ViewStates.Visible;
 
-            ConfigurarAlturaListView();
+                _gastos = await _gastoService.ObtenerGastos();
+                _filteredList = _gastos.ToList();
+                _gastoSeleccionado = null;
+                _listView.Adapter = new GastoListAdapter(this.Activity, _filteredList);
 
-            LimpiarCampos();
+                ConfigurarAlturaListView();
+
+                LimpiarCampos();
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                _loadingSpinner.Visibility = ViewStates.Gone;
+            }
         }
 
         private async void LoadFuentes()
@@ -97,6 +111,7 @@ namespace MyWalletApp.Mobile.Fragments.Gastos
             _fechaGasto = View.FindViewById<TextView>(Resource.Id.txtFechaGasto);
             _btnActualizar = View.FindViewById<Button>(Resource.Id.btnActualizar);
             _btnEliminar = View.FindViewById<Button>(Resource.Id.btnEliminar);
+            _loadingSpinner = View.FindViewById<ProgressBar>(Resource.Id.loadingSpinner);
         }
 
         private void HandleEvents()

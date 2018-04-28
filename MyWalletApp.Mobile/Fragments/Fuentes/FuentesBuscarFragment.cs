@@ -26,6 +26,7 @@ namespace MyWalletApp.Mobile.Fragments.Fuentes
         private Button _btnEliminar;
         private EditText _buscar;
         private EditText _nombre;
+        private ProgressBar _loadingSpinner;
         private FuenteService _fuenteService;
 
         public FuentesBuscarFragment()
@@ -65,6 +66,7 @@ namespace MyWalletApp.Mobile.Fragments.Fuentes
             _btnEliminar = View.FindViewById<Button>(Resource.Id.btnEliminar);
             _buscar = View.FindViewById<EditText>(Resource.Id.buscar);
             _nombre = View.FindViewById<EditText>(Resource.Id.txtNombre);
+            _loadingSpinner = View.FindViewById<ProgressBar>(Resource.Id.loadingSpinner);
         }
 
         private void HandleEvents()
@@ -140,14 +142,27 @@ namespace MyWalletApp.Mobile.Fragments.Fuentes
 
         private async void ActualizarFuentes()
         {
-            _fuentes = await _fuenteService.ObtenerFuentes();
-            _filteredList = _fuentes.ToList();
-            _fuenteSeleccionada = null;
-            _listView.Adapter = new FuenteListAdapter(this.Activity, _filteredList);
+            try
+            {
+                _loadingSpinner.Visibility = ViewStates.Visible;
 
-            ConfigurarAlturaListView();
+                _fuentes = await _fuenteService.ObtenerFuentes();
+                _filteredList = _fuentes.ToList();
+                _fuenteSeleccionada = null;
+                _listView.Adapter = new FuenteListAdapter(this.Activity, _filteredList);
 
-            LimpiarCampos();
+                ConfigurarAlturaListView();
+
+                LimpiarCampos();
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                _loadingSpinner.Visibility = ViewStates.Gone;
+            }
         }
 
         private void LimpiarCampos()
